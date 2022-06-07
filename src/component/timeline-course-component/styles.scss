@@ -1,0 +1,134 @@
+
+@import "../../styles/variables.scss";
+
+#timeline {
+	position: relative;
+  margin: 20px 10px 20px 20px;
+  padding: 0px;
+  width: 90%;
+  &:before {
+    left: 0;
+  }
+	@include prefix(transition, all .4s ease);
+
+	&:before {
+		content:"";
+		width: 2px;
+		height: 93%;
+		background: $tertiary;
+		left: 17px;
+		top: 0;
+		position: absolute;
+    @include breakpointMax(phone) {
+      left: -5px;
+    }
+	}
+
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
+		width: 100%;
+	}
+	
+	.timeline-item {
+		margin-bottom: 30px;
+		position: relative;
+		@extend %clearfix;
+
+		.timeline-icon {
+			background: $tertiary;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 0;
+			left: -3px;
+			overflow: hidden;
+			@include prefix(border-radius, 50%);
+
+      @include breakpointMax(phone) {
+        margin-left: -20px;
+      }
+
+      svg {
+				position: relative;
+				top: 9px;
+        color: #fff;
+			}
+		}
+
+		.timeline-content {
+			width: 90%;
+      float: right;
+			background: #fff;
+			padding: 20px;
+			@include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
+			@include prefix(border-radius, 5px);
+			@include prefix(transition, all .3s ease);
+
+      &:before, &.right:before {
+        left: 10%;
+        margin-left: -6px;
+        border-left: 0;
+        border-right: 7px solid $tertiary;
+      }
+
+			h2 {
+        font-size: 20px;
+				padding: 10px 15px;
+				background: $tertiary;
+				color: #fff;
+				margin: -20px -20px 0 -20px;
+				font-weight: 500;
+				@include prefix(border-radius, 3px 3px 0 0);
+				@include breakpointMax(phone) {
+					font-size: 18px;
+				}
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				right: 45%;
+				top: 15px;
+				width: 0; 
+				height: 0; 
+				border-top: 7px solid transparent;
+				border-bottom: 7px solid transparent; 
+				border-right:7px solid $tertiary; 
+			}
+
+			p {
+				@include breakpointMax(phone) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	@include breakpointMax(phone) {
+		margin-bottom: 0;
+	}
+}
+
+// Buttons
+.btn {
+	padding: 5px 15px;
+	text-decoration: none;
+	background: transparent;
+	border: 2px solid lighten($secondary, 10%);
+	color: lighten($secondary, 10%);
+	display: inline-block;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 12px;
+	@include prefix(border-radius, 5px);
+	@include prefix(transition, background .3s ease);
+	@include prefix(box-shadow, 2px 2px 0 lighten($secondary, 10%));
+
+	&:hover {
+		box-shadow: none ;
+		top: 2px;
+		left: 2px;
+		@include prefix(box-shadow, 2px 2px 0 transparent);
+	}
+}

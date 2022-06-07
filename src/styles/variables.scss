@@ -1,0 +1,33 @@
+
+@import "./breakpoint.scss";
+
+$OpenSans: "Open Sans", sans-serif;
+$Oswald: "Oswald", sans-serif;
+
+$dark: rgb(29, 29, 29);
+$light: #fff;
+
+// --background
+$primary: #f1c50e;
+$secondary: #0d244b;
+$tertiary: #2b2e48;
+
+// --color
+$text-color-dark: #111;
+$text-color-white: #fff;
+
+$font-desktop: 16px;
+$font-mobile: 1rem;
+
+// --spacing
+$spacing-md: 16px;
+$spacing-md: 32px;
+
+// --others
+$borderColor: #72726f;
+$borderRadius: 20px;
+$header-height: 72px;
+
+$width-lg: 1140px;
+$width-sm: 380px;
+

@@ -1,0 +1,162 @@
+@import "../../styles/variables.scss";
+
+#information {
+  min-height: 940px;
+  .information__container {
+    width: calc(((100% - 940px) / 2) + 587px);
+    height: 800px;
+    margin: 0 0 0 auto;
+    background-color: $secondary;
+  }
+  .information__image-1 {
+    height: 526px;
+    width: 848px;
+    object-position: 0% 50%;
+    margin: -720px auto 0 calc(((100% - 940px) / 2));
+    border-radius: 20px;
+  }
+  .information__content {
+    width: 876px;
+    margin-right: calc(((100% - 940px) / 2));
+    margin-bottom: 42px;
+    margin: -218px calc(((100% - 1140px) / 2) + 60px) 60px auto;
+    .information__layout {
+      margin: -25px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .information__layout-left {
+        flex: 0 0 62%;
+        min-width: 62%;
+        border: 25px solid transparent;
+        min-height: 456px;
+      }
+      .information__layout-right {
+        flex: 0 0 38%;
+        min-width: 38%;
+        display: flex;
+        flex-direction: column;
+        border: 25px solid transparent;
+      }
+      .information__grid {
+        text-align: left;
+        background-color: $primary;
+        border-radius: 20px;
+        min-height: 100%;
+        .container__content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 50px;
+          border-radius: 20px !important;
+          .content__title {
+            margin: 0 auto 0 0;
+            font-size: 28px;
+            line-height: 1.1;
+            font-weight: 700;
+          }
+          .content__desc {
+            margin: 20px auto 0 0;
+            font-weight: 400;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          .btn__register {
+            background: linear-gradient(45deg, #0d244b, #f1c50e 120%);
+            color: #fff;
+            display: inline-block;
+            font-weight: 500;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin: 20px auto 0 0;
+            padding: 10px 30px;
+            font-size: 13px;
+          }
+        }
+      }
+      .wrapper-right {
+        display: flex;
+        flex-direction: column;
+      }
+      .u-grid-right {
+        min-height: 66px;
+      }
+
+      .d-grid-right {
+        min-height: 398px;
+        background-image: url("../../../public/images/u-image-2.jpg");
+      }
+    }
+  }
+
+  @include breakpointMax(tablet-lg) {
+    min-height: 906px;
+    .information__container {
+      width: calc(((100% - 720px) / 2) + 587px);
+    }
+    .information__image-1 {
+      height: 446px;
+      width: 720px;
+      margin-left: calc(((100% - 720px) / 2));
+    }
+  }
+  @include breakpointMax(phone) {
+    min-height: 1150px;
+    .information__container {
+      width: 278px;
+      height: 1078px;
+    }
+    .information__image-1 {
+      height: 211px;
+      width: 340px;
+      margin-top: -1026px;
+      margin-left: calc(((100% - 340px) / 2));
+    }
+
+    .information__content {
+      width: 365px;
+      margin-top: -66px;
+      margin-right: auto;
+      margin-bottom: 60px;
+      .information__layout {
+        margin-inline: 0px;
+        .information__layout-left {
+          min-width: 100%;
+        }
+        .information__layout-right {
+          min-width: 100%;
+        }
+        .information__grid {
+          border-radius: 20px;
+          .container__content {
+            padding-inline: 20px;
+            .content__title {
+              font-size: 22px;
+            }
+            .content__desc {
+              font-size: 14px;
+            }
+            .btn__register {
+              background: linear-gradient(45deg, #0d244b, #f1c50e 120%);
+              color: #fff;
+              display: inline-block;
+              font-weight: 500;
+              border-radius: 20px;
+              text-transform: uppercase;
+              margin: 20px auto 0 0;
+              padding: 10px 30px;
+              font-size: 13px;
+            }
+          }
+        }
+        .u-grid-right {
+          display: none;
+        }
+        .d-grid-right {
+          min-height: 376px;
+          background-image: url("../../../public/images/u-image-2.jpg");
+        }
+      }
+    }
+  }
+}

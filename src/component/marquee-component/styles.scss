@@ -1,0 +1,54 @@
+@import "../../styles/variables.scss";
+
+.hot-new__container {
+  border-radius: 3px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 400;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 0.5s ease-in-out;
+  background-color: #f0eeef;
+  .body-wrapper {
+    font-size: 13px;
+    width: 100%;
+    color: #042d56;
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    .marquee-container {
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      max-width: 343px;
+      @include breakpoint(phone) {
+        max-width: 618px;
+      }
+      @include breakpoint(tablet-lg) {
+        max-width: 948px;
+      }
+      @include breakpoint(desktop-lg) {
+        max-width: calc($width-lg - 30px);
+      }
+      .marquee {
+        font-weight: 500;
+        display: inline-block;
+        white-space: nowrap;
+        padding-left: 101%;
+        span {
+          margin-right: 300px;
+          @include breakpointMax(phone) {
+            max-width: 120px;
+          }
+        }
+      }
+    }
+  }
+}

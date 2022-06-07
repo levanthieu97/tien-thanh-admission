@@ -1,0 +1,175 @@
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+// imports styles
+@import "./variables.scss";
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    @content;
+  }
+
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: white;
+  font-family: $OpenSans;
+  color: $text-color-dark;
+  font-size: $font-desktop;
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include breakpointMax(phone) {
+    font-size: $font-mobile;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+.btn:focus {
+  box-shadow: none;
+}
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $text-color-dark;
+}
+
+input,
+textarea,
+button,
+select {
+  border: none;
+  background: none;
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: var(--main-font);
+  line-height: normal;
+}
+
+section {
+  position: relative;
+}
+
+.btn {
+  padding: 13px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.component-container {
+  width: auto;
+  margin-inline: auto;
+  padding-inline: 16px;
+  @include breakpoint(tablet-lg) {
+    width: 100%;
+    max-width: 980px;
+  }
+  @include breakpoint(desktop-lg) {
+    width: 100%;
+    max-width: 1140px;
+  }
+}
+
+.component__wrapper {
+  display: flex;
+  position: relative;
+  .component__grid {
+    width: 50%;
+    @include breakpointMax(phone) {
+      width: 100%;
+    }
+  }
+}
+
+.u-image {
+  object-fit: cover;
+  display: block;
+  vertical-align: middle;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.text__link {
+  display: inline-block;
+  text-align: center;
+  border-style: none none solid;
+  border-width: 1px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.banner__list-desc {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  .banner__list-item {
+    div {
+      margin: 5px 0 10px 30px;
+    }
+  }
+}
+
+/* Keyframes */
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}

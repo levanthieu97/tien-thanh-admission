@@ -1,0 +1,147 @@
+@import "../../styles/variables.scss";
+
+#about-us {
+  min-height: 680px;
+  background-color: $secondary;
+  .about-us__rectangle {
+    height: 296px;
+    margin: 0;
+    background-color: $primary;
+  }
+  .about-us__wrapper {
+    width: 960px;
+    min-height: 554px;
+    margin: -215px auto 60px;
+    background-color: #fff;
+    border-radius: 33px;
+    .about-us__layout {
+      padding: 30px 35px;
+      min-height: 554px;
+      .layout__title {
+        margin-block: 15px;
+        font-size: 32px;
+      }
+      .layout__rectangle {
+        display: none;
+      }
+      .layout__form {
+        margin-left: 450px;
+        margin-top: -5px;
+        height: auto;
+        .form-container {
+          box-shadow: none;
+          margin-inline: 0px;
+          padding: 0;
+          .form-content {
+            margin-top: 0px;
+          }
+          .label-input {
+            font-size: 16px;
+          }
+          .fieldset {
+            .form__input {
+              display: block;
+              width: 100%;
+              padding: 10px 12px;
+              background-image: none;
+              background-clip: padding-box;
+              border: none;
+              border-radius: 10px;
+              background-color: #f2f2f2;
+              color: inherit;
+              height: auto;
+              font-size: 16px;
+            }
+          }
+          .action-form {
+            padding: 0;
+            .btn__about-us {
+              width: 100%;
+              animation: none;
+              background: none;
+              background-color: $primary;
+              transform: none;
+              margin: 0px;
+              font-size: 16px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              font-weight: 700;
+              color: $secondary;
+              @include prefix(transition, all 0.4s ease);
+              border-radius: 10px;
+              &:hover {
+                background-color: $secondary;
+                color: $text-color-white;
+              }
+            }
+          }
+        }
+      }
+      .layout__info {
+        margin-right: 455px;
+        margin-top: -415px;
+        font-size: 18px;
+        color: $secondary;
+        .banner__list-item {
+          .item {
+            margin-bottom: 18px;
+            span {
+              font-size: 16px;
+              font-weight: 700;
+            }
+            &.item-phone {
+              letter-spacing: 1px;
+            }
+          }
+          .icon-space {
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+  }
+  @include breakpointMax(phone) {
+    min-height: 875px;
+    .about-us__rectangle {
+      height: 230px;
+    }
+    .about-us__wrapper {
+      width: 350px;
+      min-height: 800px;
+      margin-bottom: 0px;
+      .about-us__layout {
+        padding-inline: 10px;
+        min-height: 800px;
+        display: flex;
+        flex-direction: column;
+        .layout__title {
+          margin-left: 10px;
+          margin-block: 15px;
+          font-size: 32px;
+        }
+        .layout__rectangle {
+          display: block;
+          height: 2px;
+          background-color: #f2f2f2;
+        }
+        .layout__form {
+          width: 320px;
+          margin: 0 0 10px 0;
+          .form-container {
+            .form-content {
+              margin-inline: 10px;
+            }
+          }
+        }
+        .layout__info {
+          margin-inline: 0;
+          margin-top: 15px;
+          font-size: 18px;
+          .banner__list-desc {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

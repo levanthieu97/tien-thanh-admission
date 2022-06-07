@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+
+.header {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 64px;
+  color: #FFF;
+  box-shadow: none;
+  transition: all .3s ease;
+
+  .component-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .header__logo {
+    margin-block: 10px;
+    text-transform: uppercase;
+    font-size: 28px;
+  }
+}

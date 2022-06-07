@@ -1,0 +1,74 @@
+@import "../../styles/variables.scss";
+
+#comment {
+  min-height: 390px;
+  background-color: #f1c50e;
+  padding-bottom: 10px;
+  .comment__grid-rectangle {
+    background-color: #fff;
+    margin: 0;
+    height: 280px;
+  }
+  .comment__title {
+    letter-spacing: normal;
+    font-weight: 700;
+    font-size: 32px;
+    margin: -270px 10px 0 10px;
+  }
+  .comment__subtitle {
+    line-height: 1.5;
+    margin-inline: 10px;
+    color: #999;
+    font-weight: 400;
+  }
+  .comment__container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 10px 0px 10px;
+    padding-bottom: 30px;
+    .comment__grid {
+      display: grid;
+      grid-template-columns: repeat(3, calc(100% / 3));
+      grid-gap: 20px;
+      min-height: 188px;
+      .item {
+        text-align: left;
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 30px;
+        .item__name {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+        .item__content {
+          font-size: 14px;
+          font-weight: 400;
+          margin-top: 20px;
+          q {
+            quotes:'\201C' '\201D';
+          }
+        }
+      }
+    }
+  }
+  @include breakpointMax(phone) { 
+    min-height: 1000px;
+    .comment__grid-rectangle {
+      height: 365px;
+    }
+    .comment__title {
+      font-size: 28px;
+      margin-top: -371px;
+    }
+    .comment__container {
+      .comment__grid {
+        grid-template-columns: 100%;
+        min-height: 432px;
+      }
+    }
+  }
+}
