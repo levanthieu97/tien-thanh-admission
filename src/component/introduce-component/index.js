@@ -14,7 +14,6 @@ const IntroduceComponent = () => {
               <br/> Sát hạch &amp; đào tạo lái xe các hạng B1, B2, C
             </div>
             <img alt='' src={`${process.env.PUBLIC_URL}/images/introduce-image.jpg`} className='introduce__image'/>
-
           </div>
         </div>
         <div className='component__grid introduce__layout introduce__right'>

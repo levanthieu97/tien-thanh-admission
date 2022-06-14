@@ -149,58 +149,92 @@
         padding-inline: 10px;
       }
     }
-    .product__container {
-      position: relative;
-      background-color: #f5f7fa;
-      color: $text-color-dark;
+  }
+
+  .product__container {
+    position: relative;
+    background-color: #f5f7fa;
+    color: $text-color-dark;
+    border-radius: 20px;
+    text-align: left;
+    height: auto;
+    .product__layout {
       border-radius: 20px;
+      padding: 30px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .product__circle {
+      height: 88px;
+      width: 88px;
+      background-image: none;
+      box-shadow: 7px -7px 0px 0 rgb(245 214 84 / 40%);
+      margin: 0 auto;
+      padding: 22px;
+      background-color: $primary;
+      border-radius: 50%;
+      display: block;
+      line-height: 0;
+      border-width: 0px;
+    }
+    .product__image {
+      height: 128px;
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+      object-fit: cover;
+    }
+    .product__title {
       text-align: center;
-      .product__layout {
-        border-radius: 20px;
-        padding: 30px 20px 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-      }
-      .product__circle {
-        height: 88px;
-        width: 88px;
-        background-image: none;
-        box-shadow: 7px -7px 0px 0 rgb(245 214 84 / 40%);
-        margin: 0 auto;
-        padding: 22px;
-        background-color: $primary;
-        border-radius: 50%;
-        display: block;
-        line-height: 0;
-        border-width: 0px;
-      }
-      .product__title {
-        text-transform: uppercase;
-        font-weight: 500;
-        margin: 20px 2px 0;
-        font-size: 24px;
-        font-family: $Oswald;
-      }
-      .product__description {
-        font-style: italic;
-        margin: 20px 3px 0;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 1.3;
-        color: #555c66;
-      }
-      .product__more {
-        color: $text-color-dark;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin: 20px auto 0;
-        padding: 0;
-      }
-      @include breakpointMax(phone) {
-        .product__layout {
-          padding-inline: 10px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin: 20px 2px 0;
+      font-size: 24px;
+      font-family: $Oswald;
+    }
+    .product__description {
+      font-style: italic;
+      margin: 20px 3px 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: #555c66;
+    }
+    .product__content {
+      list-style: none;
+      position: relative;
+      padding: 0;
+      min-height: 177px;
+      .content-item {
+        div {
+          margin: 5px 0 10px 28px;
         }
+        .icon-item {
+          color: $secondary;
+          font-size: 20px;
+        }
+        .title {
+          font-weight: 700;
+          font-size: 15px;
+        }
+      }
+    }
+    .product__more {
+      color: $text-color-dark;
+      text-transform: uppercase;
+      width: 50%;
+      padding: 8px 12px;
+      transform: translateX(50%);
+      &:hover {
+        color: $text-color-white;
+      }
+    }
+
+    
+    @include breakpointMax(phone) {
+      .product__layout {
+        padding-inline: 10px;
       }
     }
   }
@@ -216,6 +250,57 @@
         color: $primary;
         border-color: $text-color-white;
       }
+    }
+  }
+
+  .swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    /* Fix of Webkit flickering */
+  }
+  .swiper-container-vertical > .swiper-wrapper {
+    flex-direction: column;
+  }
+
+  .product__carousel {
+    position: relative;
+    margin-top: 50px;
+    .swiper-btn {
+      position: absolute;
+      top: 40%;
+      visibility: visible;
+      transform: translateY(-40%);
+      font-size: 18px;
+      line-height: 38px;
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      border-radius: 50%;
+      
+      @include breakpointMax(phone) {
+        visibility: hidden;
+      }
+      &.no-active {
+        background-color: #FDF5C4;
+        color: #949494;
+      }
+  
+      &.active {
+        background-color: $primary;
+        color: $secondary;
+      }
+    }
+    .swiper-button-prev {   
+      padding-right: 4px;     
+      left: -50px;
+    }
+    .swiper-button-next {
+      padding-left: 7px;
+      right: -50px;
     }
   }
 }

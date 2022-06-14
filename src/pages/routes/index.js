@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CommonActions from "../../common/CommonActions";
+import { RegisterModalComponent } from "../../component";
 
 const LadingPage = CommonActions.lazyWithPreload(() => import("../landing-page"));
 
@@ -17,11 +18,9 @@ const Routes = () => {
           </Helmet>
           <Suspense fallback={null}>
             <Switch>
-              <Route
-                path="/"
-                render={(routeProps) => <LadingPage {...routeProps} />}
-              ></Route>
+              <Route path="/" render={(routeProps) => <LadingPage {...routeProps} />}></Route>
             </Switch>
+            <RegisterModalComponent/>
           </Suspense>
         </HelmetProvider>
       </div>
@@ -29,4 +28,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default React.memo(Routes);

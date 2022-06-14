@@ -1,10 +1,11 @@
-html,
 body {
   overflow-x: hidden !important;
 }
 
 // imports styles
 @import "./variables.scss";
+@import "/node_modules/swiper/swiper.scss";
+@import "/node_modules/swiper/modules/effect-fade/effect-fade.scss";
 
 @mixin placeholder {
   &::-webkit-input-placeholder {
@@ -100,11 +101,9 @@ section {
   margin-inline: auto;
   padding-inline: 16px;
   @include breakpoint(tablet-lg) {
-    width: 100%;
     max-width: 980px;
   }
   @include breakpoint(desktop-lg) {
-    width: 100%;
     max-width: 1140px;
   }
 }
@@ -146,6 +145,26 @@ section {
     div {
       margin: 5px 0 10px 30px;
     }
+  }
+}
+
+.btn__form {
+  width: 100%;
+  animation: none;
+  background: none;
+  background-color: $primary;
+  transform: none;
+  margin: 0px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: $secondary;
+  @include prefix(transition, all 0.4s ease);
+  border-radius: 10px;
+  &:hover {
+    background-color: $secondary;
+    color: $text-color-white;
   }
 }
 

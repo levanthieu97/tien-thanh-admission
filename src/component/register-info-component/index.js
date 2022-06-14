@@ -1,13 +1,17 @@
 import React, { useReducer } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import _ from "lodash";
 import "./styles.scss";
 import { OPTION_COURSES, TEXT_FIELD } from "../../common/Foundation";
 import CheckBox from "../checkbox-component";
+import RegisterAction  from "../../stores/RegisterAction";
+import { closeModal } from "../../reducer/slices/RegisterModalSlice";
 import {v4 as uuid} from 'uuid';
 
 
 const RegisterInfoComponent = (props) => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -16,29 +20,34 @@ const RegisterInfoComponent = (props) => {
   } = useForm();
 
   const [state, setState] = useReducer((state, newState) => ({ ...state, ...newState }), {
-    selectedCourse: "",
+    selectedCourse: props.selected || '',
+    selectedError: false
   });
 
-  const registerAccount = (data) => {
-    console.log(data);
+  const registerAccount = async (data) => {
+    if(state.selectedCourse === '') {
+      setState({selectedError: true});
+      return;
+    }
+    const params = {...data, course: state.selectedCourse};
+    await RegisterAction.insertRegisterAdmission(params);
+    dispatch(closeModal());
   };
 
   const onSelectedCourse = (value) => {
-    console.log(value);
-    console.log(state.selectedCourse);
     setState({ selectedCourse: value });
   };
 
   const showCourse = () => {
     return OPTION_COURSES.map((course, index) => (
-      <div key={uuid} className={`checkbox-label ${state.selectedCourse === course.value ? "gift_collapsed" : ""}`}>
+      <div key={index} className={`checkbox-label ${state.selectedCourse === course.value ? "gift_collapsed" : ""}`}>
         <CheckBox label={course.value} onChange={onSelectedCourse} value={course.value} name={props.name} selected={state.selectedCourse === course.value} />
       </div>
     ));
   };
 
   return (
-    <div className="register-form-container">
+    <div className="register-form-container" key={uuid}>
       <div className="form-container">
         <div className="login-form-wrapper">
           {props.title && (
@@ -64,7 +73,7 @@ const RegisterInfoComponent = (props) => {
                     },
                   })}
                 />
-                {errors.firstName && <p className="message-errors">Please enter your first name.</p>}
+                {errors.fullName && <p className="message-errors">Vui lòng nhập họ và tên.</p>}
               </div>
             </div>
             <div className="field-content">
@@ -74,7 +83,7 @@ const RegisterInfoComponent = (props) => {
               <div className="fieldset">
                 <input
                   className={`form__input ${errors.phone ? "validate-fail" : ""}`}
-                  type="text"
+                  type="tel"
                   name="phone"
                   placeholder={TEXT_FIELD.PHONE}
                   {...register("phone", {
@@ -84,7 +93,7 @@ const RegisterInfoComponent = (props) => {
                     },
                   })}
                 />
-                {errors.lastName && <p className="message-errors">Please enter your last name.</p>}
+                {errors.phone && <p className="message-errors">Vui lòng nhập số điện thoại.</p>}
               </div>
             </div>
             <div className="field-content">
@@ -104,14 +113,15 @@ const RegisterInfoComponent = (props) => {
                     },
                   })}
                 />
-                {errors.password && <p className="message-errors">Please enter your password.</p>}
+                {errors.address && <p className="message-errors">Vui lòng nhập số địa chỉ.</p>}
               </div>
             </div>
-            <div className="field-content">
+            <div className="field-content fieldset">
               <label className="label-input" htmlFor="course">
                 <span>{`${TEXT_FIELD.COURSE}:`}</span>
               </label>
               <div className="fieldset check__courses">{showCourse()}</div>
+              {state.selectedError && <p className="message-errors">Vui lòng chọn khóa học.</p>}
             </div>
             <div className="action-form">
               <button type="submit" onClick={() => trigger()} className={`btn-register ${props.classForm}`}>

@@ -5,7 +5,7 @@ import { COURSE_CAROUSEL } from "../../common/Foundation";
 const ProductCarousel = () => {
   const displayProduct = () => {
     return COURSE_CAROUSEL.map((course, index) => (
-      <div className="item">
+      <div className="item" key={index}>
         <div className="item__layout">
           <div className="item__title">{course.title}</div>
           <div className="item__content"></div>

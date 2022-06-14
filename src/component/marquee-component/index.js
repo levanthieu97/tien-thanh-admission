@@ -15,9 +15,9 @@ const MarqueeComponent = () => {
       const marqueeTravelTime = marqueeLength !== 0 ? Math.ceil(marqueeLength / 60) : getDefaultMarqueeTravelTime();
       currentMarquee.style.animation = `scrollLeft ${marqueeTravelTime}s linear infinite`;
     }
-  });
+  }, []);
 
-  function getDefaultMarqueeTravelTime() {
+  const getDefaultMarqueeTravelTime = () => {
     let marqueeTravelTime = defaultTime;
 
     const numberOfChars = _.get(marquee, "current.innerText.length");

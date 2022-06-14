@@ -1,15 +1,13 @@
-import CommonActions from "../common/CommonActions";
 
-export const HeaderComponent = CommonActions.lazyWithPreload(() => import('./header-component'));
-export const BannerComponent = CommonActions.lazyWithPreload(() => import('./banner-component'));
-export const RegisterInfoComponent = CommonActions.lazyWithPreload(() => import('./register-info-component'));
-export const MarqueeComponent = CommonActions.lazyWithPreload(() => import('./marquee-component'));
-export const IntroduceComponent = CommonActions.lazyWithPreload(() => import('./introduce-component'));
-export const GiftComponent = CommonActions.lazyWithPreload(() => import('./gift-component'));
-export const ProductComponent = CommonActions.lazyWithPreload(() => import('./product-component'));
-export const InformationComponent = CommonActions.lazyWithPreload(() => import('./information-component'));
-export const ProductCarousel = CommonActions.lazyWithPreload(() => import('./product-carousel-component'));
-export const CommentComponent = CommonActions.lazyWithPreload(() => import('./comment-component'));
-export const AboutUsComponent = CommonActions.lazyWithPreload(() => import('./about-us-component'));
-
-
+export { default as HeaderComponent }  from './header-component';
+export { default as BannerComponent }  from './banner-component';
+export { default as RegisterInfoComponent }  from './register-info-component';
+export { default as MarqueeComponent }  from './marquee-component';
+export { default as IntroduceComponent }  from './introduce-component';
+export { default as GiftComponent }  from './gift-component';
+export { default as ProductComponent }  from './product-component';
+export { default as InformationComponent }  from './information-component';
+export { default as ProductCarousel }  from './product-carousel-component';
+export { default as CommentComponent }  from './comment-component';
+export { default as AboutUsComponent }  from './about-us-component';
+export { default as RegisterModalComponent }  from './register-modal-component';

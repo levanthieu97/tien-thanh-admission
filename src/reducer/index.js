@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import globalRuder from './slices/GlobalSlice';
+import globalSlice from './slices/GlobalSlice';
+import registerModalSlice from './slices/RegisterModalSlice';
 
 const store = configureStore({
   reducer: {
-    globalRuder: globalRuder,
+    globalSlice: globalSlice,
+    registerModalSlice: registerModalSlice
   }
 });
 

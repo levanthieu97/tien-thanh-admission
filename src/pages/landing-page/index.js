@@ -12,8 +12,7 @@ import {
   AboutUsComponent
 } from "../../component";
 const LadingPage = (props) => {
-  console.log(props);
-
+  
   return (
     <React.Fragment>
       <HeaderComponent />

@@ -1,7 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { openModal } from "../../reducer/slices/RegisterModalSlice";
 import "./styles.scss";
 
 const InformationComponent = () => {
+  const dispatch = useDispatch();
+
+  const showRegisterModal = () => {
+    dispatch(openModal());
+  };
 
   const displayContentLeft = () => {
     return (
@@ -9,14 +16,16 @@ const InformationComponent = () => {
         <div className="container__content">
           <div className="content__title">Chương trình ưu đãi</div>
           <p className="content__desc">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Duy nhất 20 suốt ưu đãi cực sốc trị giá đến 3 triệu đồng dành cho 20 học viên đầu tiên, cùng vô vàn quà tặng khác.
           </p>
           <p className="content__desc">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Với nhiều gói chương trình đào tạo lái xe với các mức học phí linh hoạt, học viên của trường học lái xe Tiến Thành sẽ có nhiều sự lựa chọn
+            và tìm cho mình một khóa học lái xe phù hợp.
           </p>
-          <button type="button" className="btn btn__register">Đăng ký trực tuyến</button>
+          <p className="content__desc">Thời gian chỉ từ: 15.06 – 31.06 Đăng ký nhanh chóng</p>
+          <button type="button" className="btn btn__register" onClick={() => showRegisterModal()}>
+            Đăng ký trực tuyến
+          </button>
         </div>
       </div>
     );
@@ -28,13 +37,11 @@ const InformationComponent = () => {
       <img alt="" src={`${process.env.PUBLIC_URL}/images/information.jpg`} className="information__image-1 u-image" />
       <div className="information__content">
         <div className="information__layout">
-          <div className="information__layout-left">
-            {displayContentLeft()}
-          </div>
+          <div className="information__layout-left">{displayContentLeft()}</div>
           <div className="information__layout-right">
             <div className="wrapper-right">
-              <div className="right-content u-grid-right"/>
-              <div className="right-content d-grid-right u-image"/>
+              <div className="right-content u-grid-right" />
+              <div className="right-content d-grid-right u-image" />
             </div>
           </div>
         </div>

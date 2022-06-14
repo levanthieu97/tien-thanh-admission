@@ -1,41 +1,22 @@
 import React from "react";
 import "./styles.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserPen, faAddressCard, faCarSide } from "@fortawesome/free-solid-svg-icons";
+import { TIMELINE_COURSE } from "../../common/Foundation";
 
 const TimeLineCourse = () => {
   return (
     <div id="timeline">
-      <div className="timeline-item">
-        <div className="timeline-icon">
-          <FontAwesomeIcon icon={faUserPen} />
+      {TIMELINE_COURSE.map((item, index) => (
+        <div className="timeline-item" key={index}>
+          <div className="timeline-icon">
+            <FontAwesomeIcon icon={item.icon} />
+          </div>
+          <div className="timeline-content">
+            <h2>{item.title}</h2>
+            <p>{item.content}</p>
+          </div>
         </div>
-        <div className="timeline-content">
-          <h2>ĐĂNG KÝ HỌC LÁI XE</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</p>
-        </div>
-      </div>
-
-      <div className="timeline-item">
-        <div className="timeline-icon">
-          <FontAwesomeIcon icon={faCarSide} />
-        </div>
-        <div className="timeline-content">
-          <h2>HỌC LÁI XE</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</p>
-
-        </div>
-      </div>
-
-      <div className="timeline-item">
-        <div className="timeline-icon">
-          <FontAwesomeIcon icon={faAddressCard} />
-        </div>
-        <div className="timeline-content">
-          <h2>THI VÀ CẤP BẰNG CHO HỌC VIÊN</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.</p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
