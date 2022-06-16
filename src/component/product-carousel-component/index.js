@@ -11,19 +11,24 @@ const ProductCarousel = () => {
           <div className="item__content"></div>
         </div>
       </div>
-    ))
-  }
+    ));
+  };
 
   return (
     <section id="products-carousel">
       <div className="carousel__wrapper"></div>
-      <div className="carousel__background"/>
-      <img alt='' src={`${process.env.PUBLIC_URL}/images/background-carousel.jpg`} className='u-image carousel__image'/>
+      <div className="carousel__background" />
+      <iframe
+        src="https://www.youtube.com/embed/eLJ6nW8bfTw"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        className="u-image carousel__image"
+      />
       <div className="carousel__container component-container">
-        <div className="carousel__grid">
-          {displayProduct()}
-        </div>
-      </div>    
+        <div className="carousel__grid">{displayProduct()}</div>
+      </div>
     </section>
   );
 };

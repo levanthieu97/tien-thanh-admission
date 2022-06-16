@@ -241,16 +241,6 @@
 
   .product__spacing {
     min-height: 80px;
-    .product__button {
-      color: $text-color-white;
-      margin-top: 30px;
-      border-color: $primary;
-      @include prefix(transition, all 0.5s ease);
-      &:hover {
-        color: $primary;
-        border-color: $text-color-white;
-      }
-    }
   }
 
   .swiper-container {

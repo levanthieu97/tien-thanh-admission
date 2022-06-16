@@ -2,7 +2,8 @@ import React from "react";
 import "./styles.scss";
 import RegisterInfoComponent from "../register-info-component";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookSquare, faGooglePlusSquare } from '@fortawesome/free-brands-svg-icons';
 
 const AboutUsComponent = () => {
 
@@ -19,24 +20,24 @@ const AboutUsComponent = () => {
           <div className="layout__info">
           <ul className='banner__list-desc'>
             <li className='banner__list-item'>
-              <FontAwesomeIcon icon={faCircleUser} pull="left" className="icon-space"/>
+              <FontAwesomeIcon icon={faFacebookSquare} pull="left" className="icon-space"/>
               <div className="item"><span>Facebook:</span> Quốc Quốc</div>
             </li>
             <li className='banner__list-item'>
-              <FontAwesomeIcon icon={faPhone} pull="left"/>
-              <div className="item item-phone"><span>Phone:</span> 0123456789</div>
+              <FontAwesomeIcon icon={faGooglePlusSquare} pull="left" className="icon-space"/>
+              <div className="item"><span>Email:</span> hotrotienthanh@gmail.com</div>
             </li>
             <li className='banner__list-item'>
               <FontAwesomeIcon icon={faPhone} pull="left"/>
-              <div className="item item-phone"><span>Phone:</span> 0123456789</div>
+              <div className="item item-phone"><span>Phone:</span> 0862 376 568</div>
             </li>
             <li className='banner__list-item'>
-              <FontAwesomeIcon icon={faEnvelope} pull="left" className="icon-space"/>
-              <div className="item"><span>Email:</span> abcxyz@gmail.com</div>
+              <FontAwesomeIcon icon={faPhone} pull="left"/>
+              <div className="item item-phone"><span>Phone:</span> 0977 346 168</div>
             </li>
             <li className='banner__list-item'>
               <FontAwesomeIcon icon={faLocationDot} pull="left"/>
-              <div className="item"><span>Địa chỉ:</span> 20 Lê Thiệt, P. Phú Thọ Hòa, Q. Tân Phú, TP.HCM</div>
+              <div className="item"><span>Địa chỉ:</span> 40 Lê Thiệt, P. Phú Thọ Hòa, Q. Tân Phú, TP.HCM</div>
             </li>
           </ul>
           </div>

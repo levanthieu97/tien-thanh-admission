@@ -9,16 +9,39 @@ export const TEXT_FIELD = {
 
 export const OPTION_COURSES = [
   {
+    id: 0,
+    name: 'Thi Bằng Lái Xe A1',
+    value: 'A1'
+  },
+  {
     id: 1,
+    name: 'Học Lái Xe B1',
     value: 'B1'
   },
   {
     id: 2,
+    name: 'Học Lái Xe B2',
     value: 'B2'
   },
   {
     id: 3,
+    name: 'Học Lái Xe Tải Hạng C',
     value: 'C'
+  },
+  {
+    id: 3,
+    name: 'Học Lái Xe D',
+    value: ' D'
+  },
+  {
+    id: 3,
+    name: 'Học Lái Xe E',
+    value: 'E'
+  },
+  {
+    id: 3,
+    name: 'Bổ Túc Lái Xe',
+    value: 'F'
   },
 ];
 
@@ -46,6 +69,25 @@ export const IMAGE_PRODUCT = [
 ]
 
 export const PRODUCTS = [
+  {
+    type: 'A1',
+    title: 'Thi Bằng lái xe A1',
+    image: '',
+    content: [
+      {
+        name: 'Độ tuổi',
+        description: '> 18 tuổi',
+      },
+      {
+        name: 'Thời gian học',
+        description: '1 buổi lý thuyết và thực hành có người hướng dẫn',
+      },
+      {
+        name: 'Loại xe',
+        description: 'xe mô tô 2 bánh có dung tích xi lanh dưới 175cm3 hoặc mô tô 3 bánh dành riêng cho người khuyết tật.',
+      },
+    ]
+  },
   {
     type: 'B1',
     title: 'Bằng lái ô tô B1',

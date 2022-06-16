@@ -1,0 +1,120 @@
+@import "../../styles/variables.scss";
+
+#selection {
+  margin-bottom: 5px;
+  outline: none;
+  .form-field {
+    .text-field-container {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+    }
+    .dropdown {
+      position: relative;
+      user-select: none;
+
+      .text-field {
+        cursor: pointer;
+        border-radius: 5px;
+        height: 40px;
+        background: rgba($color: #fff, $alpha: 0.7);
+        border: 1px solid #72726f;
+        display: inline-flex;
+        position: relative;
+        .field-icon {
+          font-size: 16px;
+          height: 16px;
+          width: 16px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          color: $secondary;
+        }
+        .prefix-icon {
+          right: auto;
+          left: 16px;
+        }
+        .suffix-icon {
+          color: $secondary;
+          left: auto;
+          right: 20px;
+        }
+        .placeholder {
+          color: #a3a7ac;
+        }
+
+        .field-control {
+          border: none !important;
+          font-size: 15px;
+          line-height: 14px;
+          background-color: transparent;
+          padding: 13px 45px;
+          width: 100%;
+          height: 100%;
+          align-self: flex-end;
+          box-sizing: border-box;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &.field-focus {
+          border: 1px solid rgba(10, 116, 239, 0.5) !important;
+          .placeholder {
+            color: $secondary;
+          }
+        }
+      }
+
+      .dropdown-content {
+        position: absolute;
+        background-color: #fff;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;        border-top: none;
+        box-sizing: border-box;
+        top: 100%;
+        z-index: 1;
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
+        .dropdown-item {
+          cursor: pointer;
+          transition: all 0.2s;
+          height: 35px;
+          .value {
+            padding: 0 100px 0 25px;
+            min-width: 375px;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 35px;
+            white-space: nowrap;
+            margin: 0;
+            &:first-child {
+              margin-top: 5px;
+            }
+          }
+          
+          &:hover {
+            background-color: $secondary;
+            color: #fff;
+          }
+          &.active {
+            transition: all 0.4s;
+            background-color: $secondary;
+            color: #fff;
+          }
+        }
+      }
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #ced0d2;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        border-radius: 2px;
+      }
+    }
+  }
+}

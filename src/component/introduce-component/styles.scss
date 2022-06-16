@@ -22,12 +22,27 @@
         color: $secondary;
       }
       .introduce__image {
-        height: 342px;
+        height: 360px;
         margin-top: 20px;
         width: 100%;
         object-fit: cover;
         display: block;
         border-radius: 33px;
+      }
+      .introduce__spacing {
+        margin-top: 10px;
+        .product__button {
+          color: $secondary;
+          margin-top: 30px;
+          border-color: $primary;
+          font-weight: 700;
+          font-size: 22px;
+          @include prefix(transition, all 0.5s ease);
+          &:hover {
+            color: $primary;
+            border-color: $secondary;
+          }
+        }
       }
     }
 

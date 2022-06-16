@@ -20,7 +20,8 @@
       .form-content {
         letter-spacing: 0;
         overflow: hidden;
-        margin: 20px 50px;
+        margin: 20px 40px;
+        padding-inline: 10px;
         @include breakpointMax(phone) {
           margin: 20px 20px 10px 20px;
         }
@@ -55,8 +56,11 @@
           }
         }
         .check__courses {
-          display: flex;
-          column-gap: 25px;
+          .fieldset__checked {
+            display: grid;
+            grid-template-columns: repeat(4, calc(100% / 4));
+            grid-gap: 5px 10px;
+          }
           input {
             height: 0;
             width: 0;

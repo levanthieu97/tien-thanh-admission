@@ -29,6 +29,11 @@ const HeaderComponent = () => {
         <Link to="/">
           <div className="header__logo">Logo</div>
         </Link>
+        <div className="header__space"></div>
+        <div className="header__contact">
+          <button type="button" className="btn-contact">0862 376 568</button>
+          <button type="button" className="btn-contact">Facebook</button>
+        </div>
       </div>
     </header>
   );

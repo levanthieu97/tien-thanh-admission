@@ -1,12 +1,12 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import _ from "lodash";
 import "./styles.scss";
 import { OPTION_COURSES, TEXT_FIELD } from "../../common/Foundation";
-import CheckBox from "../checkbox-component";
 import RegisterAction  from "../../stores/RegisterAction";
 import { closeModal } from "../../reducer/slices/RegisterModalSlice";
+import SelectionComponent from "../selection-component";
 import {v4 as uuid} from 'uuid';
 
 
@@ -20,12 +20,27 @@ const RegisterInfoComponent = (props) => {
   } = useForm();
 
   const [state, setState] = useReducer((state, newState) => ({ ...state, ...newState }), {
-    selectedCourse: props.selected || '',
-    selectedError: false
+    selectedError: false,
+    course: {value: '', isRequired: true, isValid: false, selectedName: 'Khóa học', options: OPTION_COURSES}
   });
 
+  useEffect(() => {
+    if(state.course.value) {
+      setState({selectedError: false});
+    }
+  }, [state.course])
+
+  useEffect(() => {
+    const findCourse = OPTION_COURSES.find(item => item.value === props.selected);
+    if(findCourse) {
+      setState({ course: {...state.course, value: findCourse.value, selectedName: findCourse.name} })
+    }
+  },[props.selected]);
+
+  console.log(state.course);
+
   const registerAccount = async (data) => {
-    if(state.selectedCourse === '') {
+    if(state.course.value === '') {
       setState({selectedError: true});
       return;
     }
@@ -34,16 +49,8 @@ const RegisterInfoComponent = (props) => {
     dispatch(closeModal());
   };
 
-  const onSelectedCourse = (value) => {
-    setState({ selectedCourse: value });
-  };
-
-  const showCourse = () => {
-    return OPTION_COURSES.map((course, index) => (
-      <div key={index} className={`checkbox-label ${state.selectedCourse === course.value ? "gift_collapsed" : ""}`}>
-        <CheckBox label={course.value} onChange={onSelectedCourse} value={course.value} name={props.name} selected={state.selectedCourse === course.value} />
-      </div>
-    ));
+  const onSelectedCourse = (option) => {
+    setState({ course: {...state.course, value: option.value, selectedName: option.name} });
   };
 
   return (
@@ -56,6 +63,18 @@ const RegisterInfoComponent = (props) => {
             </header>
           )}
           <form onSubmit={handleSubmit(registerAccount)} className="form-content">
+            <div className="field-content fieldset">
+              <label className="label-input" htmlFor="course">
+                <span>{`${TEXT_FIELD.COURSE}:`}</span>
+              </label>
+              <div className="fieldset check__courses">
+                {/* <div className="fieldset__checked">
+                  {showCourse()}
+                </div> */}
+                <SelectionComponent {...state.course} name={props.classForm} changeSelected={(value) => onSelectedCourse(value)}/>
+              </div>
+              {state.selectedError && <p className="message-errors">Vui lòng chọn khóa học.</p>}
+            </div>
             <div className="field-content">
               <label className="label-input" htmlFor="fullName">
                 <span>{`${TEXT_FIELD.FULLNAME}:`}</span>
@@ -115,13 +134,6 @@ const RegisterInfoComponent = (props) => {
                 />
                 {errors.address && <p className="message-errors">Vui lòng nhập số địa chỉ.</p>}
               </div>
-            </div>
-            <div className="field-content fieldset">
-              <label className="label-input" htmlFor="course">
-                <span>{`${TEXT_FIELD.COURSE}:`}</span>
-              </label>
-              <div className="fieldset check__courses">{showCourse()}</div>
-              {state.selectedError && <p className="message-errors">Vui lòng chọn khóa học.</p>}
             </div>
             <div className="action-form">
               <button type="submit" onClick={() => trigger()} className={`btn-register ${props.classForm}`}>
