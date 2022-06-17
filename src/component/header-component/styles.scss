@@ -59,6 +59,11 @@
         -ms-box-shadow: 2px 2px 0 transparent;
         box-shadow: 2px 2px 0 transparent;
       }
+      @include breakpointMax(phone) {
+        margin-inline: 5px;
+        padding-inline: 10px;
+        font-size: 12px;
+      }
     }
   }
 }

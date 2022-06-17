@@ -9,7 +9,8 @@ import {
   InformationComponent,
   ProductCarousel,
   CommentComponent,
-  AboutUsComponent
+  AboutUsComponent,
+  FooterComponent
 } from "../../component";
 const LadingPage = (props) => {
   
@@ -25,6 +26,7 @@ const LadingPage = (props) => {
       <ProductCarousel/>
       <CommentComponent/>
       <AboutUsComponent/>
+      <FooterComponent/>
     </React.Fragment>
   );
 };

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const defautRequest = {
-  baseURL: '/'
+  baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:8080/' :'/'
 }
 
 const defaultRestApi = axios.create(defautRequest);

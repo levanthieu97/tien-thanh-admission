@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 #products-carousel {
-  min-height: 840px;
+  min-height: 900px;
   background-color: $text-color-white;
   .carousel__wrapper {
     height: 440px;
@@ -28,7 +28,7 @@
   .carousel__container {
     width: 825px;
     margin: -85px auto 0 calc(((100% - 1140px) / 2) + 50px);
-    margin-top: -73px;
+    margin-top: 10px;
     margin-left: calc(((100% - 940px) / 2) + 33px);
     display: flex;
     flex-direction: column;
@@ -72,14 +72,14 @@
       margin-right: auto;
     }
     .carousel__image {
-      width: 315px;
+      width: 340px;
       height: 220px;
-      margin-top: -1086px;
+      margin-top: -1070px;
       margin-left: calc(((100% - 340px) / 2));
     }
     .carousel__container {
       width: 279px;
-      margin-top: -52px;
+      margin-top: 15px;
       margin-left: calc(((100% - 340px) / 2) + 23px);
       .carousel__grid {
         min-height: 880px;

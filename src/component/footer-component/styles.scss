@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+#footer {
+  background-color: #182842;
+  .footer__container {
+    text-align: center;
+    font-size: 12px;
+    .footer__content {
+      margin: 0 10px;
+      padding-block: 10px;
+      color: #6082B6;
+      .icon-heart {
+        color: #C70039;
+      }
+    }
+  }
+}

@@ -11,3 +11,4 @@ export { default as ProductCarousel }  from './product-carousel-component';
 export { default as CommentComponent }  from './comment-component';
 export { default as AboutUsComponent }  from './about-us-component';
 export { default as RegisterModalComponent }  from './register-modal-component';
+export { default as FooterComponent }  from './footer-component';
