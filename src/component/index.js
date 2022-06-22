@@ -12,3 +12,5 @@ export { default as CommentComponent }  from './comment-component';
 export { default as AboutUsComponent }  from './about-us-component';
 export { default as RegisterModalComponent }  from './register-modal-component';
 export { default as FooterComponent }  from './footer-component';
+export { default as AnnouncementsComponent }  from './announcements-component';
+

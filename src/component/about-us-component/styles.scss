@@ -17,16 +17,22 @@
     .about-us__layout {
       padding: 30px 35px;
       min-height: 554px;
-      .layout__title {
-        margin-block: 15px;
-        font-size: 32px;
+      .about-us__logo {
+        height: 100px;
+        width: 465px;
+        object-fit: cover;
+        object-position: -105px;
+        @include breakpointMax(phone) {
+          width: 350px;
+          object-position: -10px;
+        }
       }
       .layout__rectangle {
         display: none;
       }
       .layout__form {
         margin-left: 450px;
-        margin-top: -5px;
+        margin-top: -60px;
         height: auto;
         .form-container {
           box-shadow: none;
@@ -94,7 +100,7 @@
       }
       .layout__info {
         margin-right: 455px;
-        margin-top: -415px;
+        margin-top: -390px;
         font-size: 18px;
         color: $secondary;
         .banner__list-item {

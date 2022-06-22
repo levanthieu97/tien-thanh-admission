@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 #products-carousel {
-  min-height: 900px;
+  min-height: 720px;
   background-color: $text-color-white;
   .carousel__wrapper {
     height: 440px;
@@ -26,65 +26,55 @@
     border-radius: 20px;
   }
   .carousel__container {
-    width: 825px;
-    margin: -85px auto 0 calc(((100% - 1140px) / 2) + 50px);
-    margin-top: 10px;
-    margin-left: calc(((100% - 940px) / 2) + 33px);
-    display: flex;
-    flex-direction: column;
+    margin-top: 15px;
     .carousel__grid {
-      grid-template-columns: repeat(3, calc(33.3333% - 12px));
-      min-height: 302px;
-      grid-gap: 18px;
-      display: grid;
-    }
-    .item {
-      color: $text-color-dark;
-      background-color: #ffffff;
-      border-radius: 20px;
-      box-shadow: 5px 5px 20px 0 rgb(0 0 0 / 40%);
-      .item__layout {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 30px 20px;
-        text-align: center;
-        .item__title {
-          text-transform: uppercase;
-          font-weight: 700;
-          font-size: 24px;
-          font-style: normal;
-        }
-        .item__content {
-          width: 164px;
-          height: 164px;
+      width: 730px;
+      margin: 0 auto;
+      .item {
+        img {
+          width: 135px;
+          height: 90px;
+          object-position: center;
+          object-fit: cover;
+          cursor: pointer;
         }
       }
     }
+    .carousel__description {
+      text-align: right;
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      text-decoration: underline;
+      margin-right: calc((100% - 940px) / 2);
+    }
   }
-
+ 
   @include breakpointMax(phone) {
-    min-height: 1120px;
+    min-height: 460px;
     .carousel__background {
       width: 340px;
-      height: 947px;
-      margin-top: -301px;
+      height: 270px;
+      margin-top: -290px;
       margin-right: auto;
     }
     .carousel__image {
       width: 340px;
-      height: 220px;
-      margin-top: -1070px;
+      height: 230px;
+      margin-top: -395px;
       margin-left: calc(((100% - 340px) / 2));
     }
     .carousel__container {
-      width: 279px;
+      width: 340px;
       margin-top: 15px;
-      margin-left: calc(((100% - 340px) / 2) + 23px);
+      margin-left: calc(((100% - 400px) / 2) + 23px);
       .carousel__grid {
-        min-height: 880px;
-        grid-template-columns: 100%;
-        grid-gap: 18px;
+        width: 333px;
+        .item {
+          img {
+            width: 140px;
+          }
+        }
       }
       .item {
         .item__layout {
@@ -93,6 +83,9 @@
             font-size: 22px;
           }
         }
+      }
+      .carousel__description {
+        margin-right: 0;
       }
     }
   }

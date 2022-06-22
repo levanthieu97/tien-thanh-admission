@@ -74,7 +74,7 @@ const ProductComponent = (props) => {
   }
 
   const showProduct = () => {
-    lengthProducts = isSmallLayout ? 0 : PRODUCTS.length;
+    lengthProducts = isSmallLayout ? 0 : PRODUCTS.length + 1;
     return PRODUCTS.map((product, index) => {
       return (
         <div className="product__container" key={index}>

@@ -240,6 +240,29 @@ export const COURSE_CAROUSEL = [
   }
 ]
 
+export const SCHOOL_CAROUSEL = [
+  {
+    type: 'video',
+    path: `${process.env.PUBLIC_URL}/images/course-oto.mp4`
+  },
+  {
+    type: 'image',
+    path: `${process.env.PUBLIC_URL}/images/information.jpg`
+  },
+  {
+    type: 'image',
+    path: `${process.env.PUBLIC_URL}/images/hang-b1.jpg`
+  },
+  {
+    type: 'image',
+    path: `${process.env.PUBLIC_URL}/images/information.jpg`
+  },
+  {
+    type: 'image',
+    path: `${process.env.PUBLIC_URL}/images/hang-b1.jpg`
+  }
+]
+
 export const COMMENTS = [
   {
     name: 'Khổng Minh Quốc',

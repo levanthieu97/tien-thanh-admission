@@ -168,6 +168,24 @@ section {
   }
 }
 
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  /* Fix of Webkit flickering */
+}
+.swiper-container-vertical > .swiper-wrapper {
+  flex-direction: column;
+}
+
+.u-clearfix:after, .u-clearfix:before {
+  content: '';
+  display: table;
+}
+
 /* Keyframes */
 @keyframes wiggle {
   0%, 7% {

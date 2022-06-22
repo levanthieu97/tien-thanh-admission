@@ -3,6 +3,7 @@ import {
   HeaderComponent,
   BannerComponent,
   MarqueeComponent,
+  AnnouncementsComponent,
   IntroduceComponent,
   GiftComponent,
   ProductComponent,
@@ -21,6 +22,7 @@ const LadingPage = (props) => {
       <BannerComponent />
       <GiftComponent />
       <ProductComponent />
+      <AnnouncementsComponent/>
       <IntroduceComponent />
       <InformationComponent />
       <ProductCarousel/>

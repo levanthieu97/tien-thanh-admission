@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import "./styles.scss";
 import { Link } from "react-router-dom";
 import { setSmallLayout } from "../../reducer/slices/GlobalSlice";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderComponent = () => {
   const dispatch = useDispatch();
@@ -27,12 +29,11 @@ const HeaderComponent = () => {
     <header className="header">
       <div className="component-container">
         <Link to="/">
-          <div className="header__logo">Logo</div>
+          <img className="header__logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Tiến Thành Logo"></img>
         </Link>
         <div className="header__space"></div>
         <div className="header__contact">
-          <button type="button" className="btn-contact">0862 376 568</button>
-          <button type="button" className="btn-contact">Facebook</button>
+          <button type="button" className="btn-contact"><FontAwesomeIcon icon={faPhone} pull="left" className="icon-phone"/> 0862 376 568</button>
         </div>
       </div>
     </header>

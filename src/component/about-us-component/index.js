@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.scss";
 import RegisterInfoComponent from "../register-info-component";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faGooglePlusSquare } from '@fortawesome/free-brands-svg-icons';
 
 const AboutUsComponent = () => {
@@ -12,7 +12,7 @@ const AboutUsComponent = () => {
       <div className="about-us__rectangle"></div>
       <div className="about-us__wrapper">
         <div className="about-us__layout">
-          <h2 className="layout__title">LOGO</h2>
+          <img className="about-us__logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Tiến Thành Logo"></img>
           <div className="layout__form">
             <RegisterInfoComponent classForm='btn__about-us'/>
           </div>
