@@ -243,11 +243,13 @@ export const COURSE_CAROUSEL = [
 export const SCHOOL_CAROUSEL = [
   {
     type: 'video',
-    path: `${process.env.PUBLIC_URL}/images/course-oto.mp4`
+    src: 'https://www.youtube.com/embed/MAelQcqhl7k?start=15',
+    path: `${process.env.PUBLIC_URL}/images/image-video.png`
   },
   {
-    type: 'image',
-    path: `${process.env.PUBLIC_URL}/images/information.jpg`
+    type: 'video',
+    src: 'https://www.youtube.com/embed/2jf9aH9q7pg?start=9',
+    path: `${process.env.PUBLIC_URL}/images/image-moto.png`
   },
   {
     type: 'image',
@@ -295,3 +297,13 @@ export const TIMELINE_COURSE = [
     content: 'Học viên được hướng dẫn đăng ký khám sức khoẻ và tiến hành thi tốt nghiệp tại trung tâm, sau đó thi sát hạch theo địa điểm quy định. Bằng lái sẽ gửi nhanh chóng từ 2-3 tuần (từ thời điểm thi).'
   },
 ]
+
+export const NOTIFICATION_SUCCESS = {
+  type: 'success',
+  content: 'Bạn đã đăng ký thành công.'
+}
+
+export const NOTIFICATION_ERROR = {
+  type: 'error',
+  content: 'Bạn đã đăng ký thất bại.'
+}

@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import _ from "lodash";
 import "./styles.scss";
-import { OPTION_COURSES, TEXT_FIELD } from "../../common/Foundation";
+import { OPTION_COURSES, TEXT_FIELD, NOTIFICATION_SUCCESS } from "../../common/Foundation";
 import RegisterAction  from "../../stores/RegisterAction";
 import { closeModal } from "../../reducer/slices/RegisterModalSlice";
+import { setToastType } from "../../reducer/slices/GlobalSlice";
 import SelectionComponent from "../selection-component";
 import {v4 as uuid} from 'uuid';
-
 
 const RegisterInfoComponent = (props) => {
   const dispatch = useDispatch();
@@ -17,11 +17,12 @@ const RegisterInfoComponent = (props) => {
     handleSubmit,
     formState: { errors },
     trigger,
+    reset
   } = useForm();
 
   const [state, setState] = useReducer((state, newState) => ({ ...state, ...newState }), {
     selectedError: false,
-    course: {value: '', isRequired: true, isValid: false, selectedName: 'Khóa học', options: OPTION_COURSES}
+    course: {value: '', isValid: false, selectedName: 'Khóa học', options: OPTION_COURSES}
   });
 
   useEffect(() => {
@@ -37,17 +38,30 @@ const RegisterInfoComponent = (props) => {
     }
   },[props.selected]);
 
-  console.log(state.course);
-
   const registerAccount = async (data) => {
     if(state.course.value === '') {
       setState({selectedError: true});
       return;
     }
-    const params = {...data, course: state.selectedCourse};
-    await RegisterAction.insertRegisterAdmission(params);
-    dispatch(closeModal());
+    const params = {...data, course: state.course.value};
+    try {
+      await Promise.all([
+        RegisterAction.insertRegisterAdmission(params),
+        RegisterAction.sendInfoNotification(params)
+      ]);
+      handleAfterRegister();
+      dispatch(setToastType(NOTIFICATION_SUCCESS));
+    } catch (error) {
+      handleAfterRegister();
+      dispatch(setToastType(NOTIFICATION_SUCCESS));
+    }
   };
+
+  const handleAfterRegister = () => {
+    reset();
+    setState({course: {...state.course, value: '', selectedName: 'Khóa học'}});
+    dispatch(closeModal());
+  }
 
   const onSelectedCourse = (option) => {
     setState({ course: {...state.course, value: option.value, selectedName: option.name} });
@@ -68,9 +82,6 @@ const RegisterInfoComponent = (props) => {
                 <span>{`${TEXT_FIELD.COURSE}:`}</span>
               </label>
               <div className="fieldset check__courses">
-                {/* <div className="fieldset__checked">
-                  {showCourse()}
-                </div> */}
                 <SelectionComponent {...state.course} name={props.classForm} changeSelected={(value) => onSelectedCourse(value)}/>
               </div>
               {state.selectedError && <p className="message-errors">Vui lòng chọn khóa học.</p>}
@@ -107,6 +118,7 @@ const RegisterInfoComponent = (props) => {
                   placeholder={TEXT_FIELD.PHONE}
                   {...register("phone", {
                     require: true,
+                    pattern: /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/,
                     validate: (value) => {
                       return !_.isEmpty(value);
                     },

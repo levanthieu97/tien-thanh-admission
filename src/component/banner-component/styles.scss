@@ -31,6 +31,11 @@
       @include breakpointMax(phone) {
         margin-bottom: 35px;
       }
+      .banner__list-item {
+        svg {
+          margin-top: 2px;
+        }
+      }
       .banner__title1 {
         font-size: 48px;
         font-weight: 700;

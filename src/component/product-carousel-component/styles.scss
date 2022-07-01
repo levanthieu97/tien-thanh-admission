@@ -38,6 +38,11 @@
           object-fit: cover;
           cursor: pointer;
         }
+        &.img-active {
+          img {
+            box-shadow: #3eb54a 0px 5px 10px;
+          }
+        }
       }
     }
     .carousel__description {

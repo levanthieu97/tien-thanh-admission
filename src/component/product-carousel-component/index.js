@@ -1,9 +1,7 @@
-import React, {useReducer} from "react";
+import React, { useReducer } from "react";
 import "./styles.scss";
-import Swiper from 'react-id-swiper';
+import Swiper from "react-id-swiper";
 import { SCHOOL_CAROUSEL } from "../../common/Foundation";
-
-const imageVideo = `${process.env.PUBLIC_URL}/images/image-video.png`;
 
 const ProductCarousel = (props) => {
   const [state, setState] = useReducer((state, newState) => ({ ...state, ...newState }), {
@@ -19,33 +17,33 @@ const ProductCarousel = (props) => {
     slidesPerView: 2.3,
     // direction: "vertical",
     controller: {
-        inverse: true
+      inverse: true,
     },
     breakpoints: {
       768: {
         slidesPerView: 3,
-        spaceBetween: 15
+        spaceBetween: 15,
       },
       1024: {
-          slidesPerView: 5,
-          spaceBetween: 15
-      }
-  }
-  }
+        slidesPerView: 5,
+        spaceBetween: 15
+      },
+    },
+  };
 
   const setMainImage = (item) => {
     setState({
       mainImage: item.path,
       mainType: item.type,
-    })
-  }
+    });
+  };
 
   const displayProduct = () => {
     return (
       <Swiper {...params}>
         {SCHOOL_CAROUSEL.map((item, index) => (
           <div key={index} className={`item ${item.path === state.mainImage ? "img-active" : ""}`} onClick={() => setMainImage(item)}>
-            <img src={item.type === "image" ? item.path : imageVideo} alt="" />
+            <img src={item.path} alt="" />
           </div>
         ))}
       </Swiper>
@@ -53,17 +51,23 @@ const ProductCarousel = (props) => {
   };
 
   const displayMainProduct = () => {
-    return state.mainType === "video" ? 
-      (
-        <video controls className="u-image carousel__image">
-          <source src={state.mainImage} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      ) :
-      (
-        <img className="u-image carousel__image" src={state.mainImage} alt="" />
-      )
-  }
+    let srcVideo = '';
+    if(state.mainType === "video") {
+      srcVideo = SCHOOL_CAROUSEL.find(item => item.path === state.mainImage) || '';
+    }
+    return state.mainType === "video" ? (
+      <iframe
+        className="u-image carousel__image"
+        src={srcVideo.src}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    ) : (
+      <img className="u-image carousel__image" src={state.mainImage} alt="" />
+    );
+  };
 
   return (
     <section id="products-carousel">

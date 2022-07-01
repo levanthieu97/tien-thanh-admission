@@ -11,7 +11,8 @@ import {
   ProductCarousel,
   CommentComponent,
   AboutUsComponent,
-  FooterComponent
+  FooterComponent,
+  ToastNotificationComponent
 } from "../../component";
 const LadingPage = (props) => {
   
@@ -29,6 +30,7 @@ const LadingPage = (props) => {
       <CommentComponent/>
       <AboutUsComponent/>
       <FooterComponent/>
+      <ToastNotificationComponent/>
     </React.Fragment>
   );
 };

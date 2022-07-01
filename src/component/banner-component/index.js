@@ -29,7 +29,7 @@ const BannerComponent = () => {
             </li>
             <li className='banner__list-item'>
               <FontAwesomeIcon icon={faUserCheck} pull="left"/>
-              <div>Học 1 thầy 1 trò 1 xe giáo viên nhiệt tình</div>
+              <div>Lịch học tự chọn do học viên tự sắp xếp.</div>
             </li>
           </ul> 
         </div>

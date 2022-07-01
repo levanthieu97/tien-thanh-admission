@@ -9,5 +9,14 @@ export default class RegisterAction {
       console.log(error);
     }
   }
+
+  static async sendInfoNotification (params) {
+    try {
+      const response = await RegisterServices.sendNotification(params);
+      return response;
+    } catch(error) {
+      return false
+    }
+  }
 }
   

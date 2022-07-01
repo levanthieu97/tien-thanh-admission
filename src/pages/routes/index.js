@@ -15,6 +15,7 @@ const Routes = () => {
             <meta charSet="utf-8" />
             <title>Trường lái xe Tiến Thành</title>
             <meta name="description" content="Trường lái xe Tiến Thành" />
+            <script src="https://sp.zalo.me/plugins/sdk.js" />
           </Helmet>
           <Suspense fallback={null}>
             <Switch>
