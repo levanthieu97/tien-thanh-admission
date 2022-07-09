@@ -2,8 +2,10 @@ import React, { useEffect, useRef } from "react";
 import _ from "lodash";
 import { v1 as uuid } from "uuid";
 import "./styles.scss";
+import {GET_MONTH, PHONE_NUMBER} from "../../common/Foundation"
+import CommonActions from "../../common/CommonActions";
 
-const messages = ["Trường dạy lái xe Tiến Thành xin kính chào.", "Khóa dạy lái bắt đầu vào ngày 8 tháng 6 năm 2022."];
+const messages = ["Trường dạy lái xe Tiến Thành xin kính chào.", `Khóa dạy lái sẽ bắt đầu vào ngày ${CommonActions.dynamicDateStartCourse()} tháng ${GET_MONTH} năm 2022.`, `Số điện thoại liên lạc: ${PHONE_NUMBER[0]}, ${PHONE_NUMBER[1]}`];
 
 const MarqueeComponent = () => {
   const marquee = useRef();

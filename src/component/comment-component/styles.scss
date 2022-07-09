@@ -44,10 +44,13 @@
           font-weight: 700;
           line-height: 1.2;
         }
+        .item__start {
+          margin-top: 5px;
+        }
         .item__content {
           font-size: 14px;
           font-weight: 400;
-          margin-top: 20px;
+          margin-top: 15px;
           q {
             quotes:'\201C' '\201D';
           }

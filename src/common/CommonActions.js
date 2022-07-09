@@ -7,4 +7,10 @@ export default class CommonActions {
     component.preload = pathComponent;
     return component;
   }
+
+  static dynamicDateStartCourse() {
+    const date = new Date();
+    const daysOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+    return date.getDate() + 7 >= daysOfMonth  ? daysOfMonth : date.getDate() + 7;
+  }
 }

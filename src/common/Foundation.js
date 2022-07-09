@@ -253,30 +253,30 @@ export const SCHOOL_CAROUSEL = [
   },
   {
     type: 'image',
-    path: `${process.env.PUBLIC_URL}/images/hang-b1.jpg`
+    path: `${process.env.PUBLIC_URL}/images/school-image-1.jpg`
   },
   {
     type: 'image',
-    path: `${process.env.PUBLIC_URL}/images/information.jpg`
+    path: `${process.env.PUBLIC_URL}/images/school-image-2.jpg`
   },
   {
     type: 'image',
-    path: `${process.env.PUBLIC_URL}/images/hang-b1.jpg`
+    path: `${process.env.PUBLIC_URL}/images/school-image-3.jpg`
   }
 ]
 
 export const COMMENTS = [
   {
-    name: 'Khổng Minh Quốc',
-    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    name: 'Anh Trần Văn Phúc',
+    content: 'Mừng khi nhận được chứng chỉ bằng lái hạng B2 tại nhà trường. Cảm ơn sự nhiệt tình từ các giáo viên đã đồng hành trong suốt thời gian thực hành tại Trường.'
   },
   {
-    name: 'Khổng Minh Quốc',
-    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    name: 'Anh Nguyễn Thanh Phong',
+    content: 'Đã nhận được bằng Hạng C tại nhà trường Tiến Thành. Chất lượng thực hành tại nhà trường khá tốt và mô hình khá thực tế. Chân thành cảm ơn nhà Trường rất nhiều!'
   },
   {
-    name: 'Khổng Minh Quốc',
-    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    name: 'Chị Hoàng Trang',
+    content: 'Tôi đã học ở đây và tôi rất hài lòng về chất lượng đào tạo của trung tâm. Tôi sẽ giới thiệu bạn bè và người thân đến đây để học.'
   }
 ]
 
@@ -307,3 +307,6 @@ export const NOTIFICATION_ERROR = {
   type: 'error',
   content: 'Bạn đã đăng ký thất bại.'
 }
+export const GET_MONTH = new Date().getMonth() + 1;
+
+export const PHONE_NUMBER = [`0862 376 568`, `0977 346 168`]

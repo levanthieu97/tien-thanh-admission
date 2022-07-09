@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { openModal } from "../../reducer/slices/RegisterModalSlice";
 import "./styles.scss";
+import {GET_MONTH} from "../../common/Foundation"
 
 const InformationComponent = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const InformationComponent = () => {
             Với nhiều gói chương trình đào tạo lái xe với các mức học phí linh hoạt, học viên của trường học lái xe Tiến Thành sẽ có nhiều sự lựa chọn
             và tìm cho mình một khóa học lái xe phù hợp.
           </p>
-          <p className="content__desc">Thời gian chỉ từ: 15.06 – 31.06 Đăng ký nhanh chóng</p>
+          <p className="content__desc">{`Thời gian chỉ từ: 15.${GET_MONTH} – 31.${GET_MONTH} Đăng ký nhanh chóng`}</p>
           <button type="button" className="btn btn__register" onClick={() => showRegisterModal()}>
             Đăng ký trực tuyến
           </button>
