@@ -15,6 +15,8 @@ const Routes = () => {
             <meta charSet="utf-8" />
             <title>Trường lái xe Tiến Thành</title>
             <meta name="description" content="Trường lái xe Tiến Thành" />
+            <meta property="article:publisher" content="https://www.facebook.com/profile.php?id=100032459906742"/>
+            <meta property="og:description" content="Học lái xe hạng: A1, B1, B2, C."/>
             <script src="https://sp.zalo.me/plugins/sdk.js" />
           </Helmet>
           <Suspense fallback={null}>

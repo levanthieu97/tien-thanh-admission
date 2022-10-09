@@ -16,7 +16,7 @@
     border-radius: 33px;
     .about-us__layout {
       padding: 30px 35px;
-      min-height: 554px;
+      min-height: 590px;
       .about-us__logo {
         height: 100px;
         width: 465px;
@@ -112,6 +112,12 @@
             }
             &.item-phone {
               letter-spacing: 1px;
+            }
+          }
+          .link-external {
+            color: $secondary;
+            &:active {
+              color: $primary;
             }
           }
           .icon-space {

@@ -17,7 +17,7 @@ const BannerComponent = () => {
       <div className='banner__wrapper component__wrapper component-container'>
         <div className='component__grid banner__info'>
           <div className='banner__title1'>TIẾN THÀNH</div>
-          <div  className='banner__title2'>Trường dạy lái xe <br/>đạt chuẩn và chất lượng</div>
+          <div  className='banner__title2'>Trung tâm đào tạo lái xe ô tô <br/>đạt chuẩn và chất lượng</div>
           <ul className='banner__list-desc'>
             <li className='banner__list-item'>
               <FontAwesomeIcon icon={faUserCheck} pull="left"/>

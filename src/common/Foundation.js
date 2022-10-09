@@ -29,17 +29,17 @@ export const OPTION_COURSES = [
     value: 'C'
   },
   {
-    id: 3,
+    id: 4,
     name: 'Học Lái Xe D',
-    value: ' D'
+    value: 'D'
   },
   {
-    id: 3,
+    id: 5,
     name: 'Học Lái Xe E',
     value: 'E'
   },
   {
-    id: 3,
+    id: 6,
     name: 'Bổ Túc Lái Xe',
     value: 'F'
   },
@@ -226,18 +226,6 @@ export const PRODUCTS = [
       }
     ]
   },
-]
-
-export const COURSE_CAROUSEL = [
-  {
-    title: 'Học Bằng lái B1'
-  },
-  {
-    title: 'Học Bằng lái B2'
-  },
-  {
-    title: 'Học Bằng lái C'
-  }
 ]
 
 export const SCHOOL_CAROUSEL = [

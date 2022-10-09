@@ -8,6 +8,7 @@ import RegisterAction  from "../../stores/RegisterAction";
 import { closeModal } from "../../reducer/slices/RegisterModalSlice";
 import { setToastType } from "../../reducer/slices/GlobalSlice";
 import SelectionComponent from "../selection-component";
+import emailjs from '@emailjs/browser';
 import {v4 as uuid} from 'uuid';
 
 const RegisterInfoComponent = (props) => {
@@ -47,7 +48,7 @@ const RegisterInfoComponent = (props) => {
     try {
       await Promise.all([
         RegisterAction.insertRegisterAdmission(params),
-        RegisterAction.sendInfoNotification(params)
+        emailjs.send('service_976h2k1', 'template_wn3atkj', params, 'xNGHCvFr5YN5dFcK3')
       ]);
       handleAfterRegister();
       dispatch(setToastType(NOTIFICATION_SUCCESS));
